@@ -408,7 +408,10 @@ rm /root/install_iptv_pro.php
 rm /root/xtreamcodes_1.0.60_Nulled.sh
 echo " "
 echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
-echo -e "${jeshile} │  Xtream Fuckers 1.0.6 Nulled By Albanian Crackers (TRC4) │ \e[0m"
+echo -e "${jeshile} │  XC 1.0.6 Nulled By Albanian Crackers (TRC4)             │ \e[0m"
+echo -e "${jeshile} └──────────────────────────────────────────────────────────┘ \e[0m"
+echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
+echo -e "${jeshile} │  Updated by Rotty                                        │ \e[0m"
 echo -e "${jeshile} └──────────────────────────────────────────────────────────┘ \e[0m"
 echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
 echo -e "${jeshile} │[+] installation Completed                                │ \e[0m"
