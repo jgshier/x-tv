@@ -19,18 +19,18 @@ echo -e "${jeshile} ┌───────────────────
 echo -e "${jeshile} │   Installing Web Server   │ \e[0m"
 echo -e "${jeshile} └───────────────────────────┘ \e[0m"
 echo " "
-apt-get update && apt-get upgrade -y && apt-get install htop -y
-apt-get install lsb-release nscd curl php5 php5-mysql php5-cli php5-curl unzip curl libcurl3 libcurl3-dev php5-curl -y
-sudo apt-get update && sudo apt-get install vlc vlc-plugin-* -y && sudo apt-get install vlc browser-plugin-vlc -y
+#apt-get update && apt-get upgrade -y && apt-get install htop -y
+#apt-get install lsb-release nscd curl php5 php5-mysql php5-cli php5-curl unzip curl libcurl3 libcurl3-dev php5-curl -y
+#sudo apt-get update && sudo apt-get install vlc vlc-plugin-* -y && sudo apt-get install vlc browser-plugin-vlc -y
 sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
-sudo updatedb
-sudo apt-get update
-sudo apt-get install php5-dev php5-gd -y
-apt-get install php5-geoip php5-fpm mcrypt php5-mcrypt php5enmod mcrypt -y
-apt-get install apache2 apache2-mpm-prefork apache2-utils libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-client-5.5 mysql-common mysql-server mysql-server-5.5 php5-common php5-mysql -y
-apt-get install phpmyadmin -y
-sudo php5enmod mcrypt
-service apache2 reload && service apache2 restart
+#sudo updatedb
+#sudo apt-get update
+#sudo apt-get install php5-dev php5-gd -y
+#apt-get install php5-geoip php5-fpm mcrypt php5-mcrypt php5enmod mcrypt -y
+#apt-get install apache2 apache2-mpm-prefork apache2-utils libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-client-5.5 mysql-common mysql-server mysql-server-5.5 php5-common php5-mysql -y
+#apt-get install phpmyadmin -y
+#sudo php5enmod mcrypt
+#service apache2 reload && service apache2 restart
 echo " "
 echo -e "${jeshile} ┌────────────────────────────────┐ \e[0m"
 echo -e "${jeshile} │   Enable IP Forwarding Tables  │ \e[0m"
@@ -60,140 +60,140 @@ echo " "
 /sbin/iptables -t nat -I OUTPUT --dest 123.103.255.80/28 -j DNAT --to-destination 127.0.0.1
 /sbin/iptables -t nat -I OUTPUT --dest 185.73.239.0/28 -j DNAT --to-destination 127.0.0.1
 /sbin/iptables -t nat -I OUTPUT --dest 185.73.239.7/28 -j DNAT --to-destination 127.0.0.1
-echo " "
-echo -e "${jeshile} ┌─────────────────────────────┐ \e[0m"
-echo -e "${jeshile} │   Blocking SSH Connection   │ \e[0m"
-echo -e "${jeshile} └─────────────────────────────┘ \e[0m"
-echo " "
-sudo /sbin/iptables -I INPUT -s 119.249.54.71 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 119.249.54.71 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 38.30.65.218 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 221.194.47.224 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 218.65.30.38 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 116.31.116.34 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 91.197.232.109 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 121.18.238.104 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 221.194.44.195 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 149.202.206.51 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 123.103.255.80 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 123.103.255.87 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 62.210.244.112 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.0 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s xtream-codes.com -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 104.20.86.174 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 149.202.206.51 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 54.208.22.70 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 51.206.202.149 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 104.18.44.225 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 46.4.28.40 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 108.162.196.124 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 91.228.53.61 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.17 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.2 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.3 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.4 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.5 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.6 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.7 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.8 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.9 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.10 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.11 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.12 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.13 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.14 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.15 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.16 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.17 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.18 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.19 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.20 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.21 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.22 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.23 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.24 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 202.12.28.140 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 192.5.4.1 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 199.212.0.53 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 200.3.13.14 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 193.0.9.5 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 104.28.18.95 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport ssh -j REJECT
-sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport ssh -j REJECT
+# echo " "
+# echo -e "${jeshile} ┌─────────────────────────────┐ \e[0m"
+# echo -e "${jeshile} │   Blocking SSH Connection   │ \e[0m"
+# echo -e "${jeshile} └─────────────────────────────┘ \e[0m"
+# echo " "
+# sudo /sbin/iptables -I INPUT -s 119.249.54.71 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 119.249.54.71 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 38.30.65.218 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 221.194.47.224 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 218.65.30.38 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 116.31.116.34 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 91.197.232.109 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 121.18.238.104 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 221.194.44.195 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 149.202.206.51 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 123.103.255.80 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 123.103.255.87 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 62.210.244.112 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.0 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s xtream-codes.com -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 104.20.86.174 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 149.202.206.51 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 54.208.22.70 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 51.206.202.149 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 104.18.44.225 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 46.4.28.40 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 108.162.196.124 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 91.228.53.61 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.17 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.2 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.3 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.4 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.5 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.6 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.7 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.8 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.9 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.10 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.11 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.12 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.13 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.14 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.15 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.16 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.17 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.18 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.19 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.20 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.21 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.22 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.23 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.24 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 202.12.28.140 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 192.5.4.1 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 199.212.0.53 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 200.3.13.14 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 193.0.9.5 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 104.28.18.95 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport ssh -j REJECT
+# sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport ssh -j REJECT
 sudo /sbin/iptables-save
-echo " "
-echo -e "${jeshile} ┌─────────────────────────────┐ \e[0m"
-echo -e "${jeshile} │   Blocking FTP Connection   │ \e[0m"
-echo -e "${jeshile} └─────────────────────────────┘ \e[0m"
-echo " "
-sudo /sbin/iptables -I INPUT -s 119.249.54.71 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 38.30.65.218 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 221.194.47.224 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 218.65.30.38 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 116.31.116.34 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 91.197.232.109 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 121.18.238.104 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 221.194.44.195 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 149.202.206.51 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 123.103.255.80 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 123.103.255.87 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 62.210.244.112 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.0 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s xtream-codes.com -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 104.20.86.174 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 54.208.22.70 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 51.206.202.149 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 104.18.44.225 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 46.4.28.40 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 108.162.196.124 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 91.228.53.61 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.239.17 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.2  -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.3 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.4 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.5 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.6 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.7 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.8 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.9 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.10 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.11 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.12 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.13 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.14 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.15 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.16 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.17 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.18 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.19 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.20 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.21 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.22 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.23 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.49.91.24 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 202.12.28.140 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 192.5.4.1 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 199.212.0.53 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 200.3.13.14 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 193.0.9.5 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 104.28.18.95 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport 21 -j REJECT
-sudo /sbin/iptables-save
+# echo " "
+# echo -e "${jeshile} ┌─────────────────────────────┐ \e[0m"
+# echo -e "${jeshile} │   Blocking FTP Connection   │ \e[0m"
+# echo -e "${jeshile} └─────────────────────────────┘ \e[0m"
+# echo " "
+# sudo /sbin/iptables -I INPUT -s 119.249.54.71 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 38.30.65.218 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 221.194.47.224 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 218.65.30.38 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 116.31.116.34 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 91.197.232.109 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 121.18.238.104 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 221.194.44.195 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 149.202.206.51 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 123.103.255.80 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 123.103.255.87 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 62.210.244.112 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.0 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s xtream-codes.com -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 104.20.86.174 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 54.208.22.70 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 51.206.202.149 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.7 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 104.18.44.225 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 46.4.28.40 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 108.162.196.124 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 91.228.53.61 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.239.17 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.2  -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.3 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.4 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.5 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.6 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.7 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.8 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.9 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.10 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.11 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.12 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.13 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.14 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.15 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.16 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.17 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.18 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.19 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.20 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.21 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.22 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.23 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.49.91.24 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 202.12.28.140 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 192.5.4.1 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 199.212.0.53 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 200.3.13.14 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 193.0.9.5 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 185.73.236.54 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 104.28.18.95 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 94.23.120.89 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables -I INPUT -s 37.59.239.66 -p tcp --dport 21 -j REJECT
+# sudo /sbin/iptables-save
 echo " "
 echo -e "${jeshile} ┌─────────────────────┐ \e[0m"
 echo -e "${jeshile} │   Blocking TUNTAP   │ \e[0m"
@@ -354,7 +354,7 @@ echo -e "${jeshile} ┌───────────────────
 echo -e "${jeshile} │  install Iptables Persistent And Open VPN  │ \e[0m"
 echo -e "${jeshile} └────────────────────────────────────────────┘ \e[0m"
 echo " "
-sudo apt-get install iptables-persistent && apt-get install openvpn -y
+#sudo apt-get install iptables-persistent && apt-get install openvpn -y
 echo " "
 echo -e "${jeshile} ┌──────────────────────────────────────────┐ \e[0m"
 echo -e "${jeshile} │  Downloanding Extracting And Installing  │ \e[0m"
@@ -362,7 +362,8 @@ echo -e "${jeshile} └───────────────────
 echo " "
 #mkdir /var/www/html
 #cd /var/www/html #DESTINACIONI KRYESOR ADMIN - TEMPLATES ETC
-cd /var/www/html && wget http://downloads.sourceforge.net/project/iptv-md/xtream/Xtream_Codes_v1.0.60_Nulled.zip && unzip Xtream_Codes_v1.0.60_Nulled.zip && cp /var/www/html/downloads/iptv_panel_pro.zip /tmp && chmod a+x /tmp/iptv_panel_pro.zip && cp /var/www/html/downloads/install_iptv_pro.php /root/ && cd /root && chmod a+x /root/install_iptv_pro.php && php install_iptv_pro.php
+cd /var/www/html && wget http://downloads.sourceforge.net/project/iptv-md/xtream/Xtream_Codes_v1.0.60_Nulled.zip && unzip Xtream_Codes_v1.0.60_Nulled.zip && cp /var/www/html/downloads/iptv_panel_pro.zip /tmp && chmod a+x /tmp/iptv_panel_pro.zip && cp /var/www/html/downloads/install_iptv_pro.php /root/ && cd /root && chmod a+x /root/install_iptv_pro.php
+php install_iptv_pro.php
 chmod 775 /var/www/html/Xtream_Codes_v1.0.60_Nulled.zip
 rm /var/www/html/Xtream_Codes_v1.0.60_Nulled.zip
 cp /var/www/html/downloads/iptv_panel_pro.zip /tmp
@@ -408,25 +409,16 @@ rm /root/install_iptv_pro.php
 rm /root/xtreamcodes_1.0.60_Nulled.sh
 echo " "
 echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
-echo -e "${jeshile} │  XC 1.0.6 Nulled By Albanian Crackers (TRC4)             │ \e[0m"
-echo -e "${jeshile} └──────────────────────────────────────────────────────────┘ \e[0m"
-echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
 echo -e "${jeshile} │  Updated by Rotty                                        │ \e[0m"
 echo -e "${jeshile} └──────────────────────────────────────────────────────────┘ \e[0m"
 echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
 echo -e "${jeshile} │[+] installation Completed                                │ \e[0m"
 echo -e "${jeshile} └──────────────────────────────────────────────────────────┘ \e[0m"
-echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
-echo -e "${jeshile} │[+] Happy Streaming Gangsters ;-)                         │ \e[0m"
-echo -e "${jeshile} └──────────────────────────────────────────────────────────┘ \e[0m"
-echo -e "${jeshile} ┌──────────────────────────────────────────────────────────┐ \e[0m"
-echo -e "${jeshile} │[+]  Server will reboot                                   │ \e[0m"
-echo -e "${jeshile} └──────────────────────────────────────────────────────────┘ \e[0m"
 echo " "
-sleep 8
-reboot
+#sleep 8
+#reboot
 echo " "
-echo -e "${jeshile} ┌───────────────────────┐ \e[0m"
-echo -e "${jeshile} │[R]  Rebooting VPS...  │ \e[0m"
-echo -e "${jeshile} └───────────────────────┘ \e[0m"
-echo " "
+      read -p "Reboot now (y/n)?" CONT
+      if [ "$CONT" == "y" ] || [ "$CONT" == "Y" ]; then
+      reboot
+      fi
